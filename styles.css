@@ -93,3 +93,41 @@
     bottom: 170px;
     left: 178px;
 }
+
+.buttonCadastrar{
+    position: relative;
+    top: 60px;
+    left: 250px;
+    border: 1px solid transparent;
+    background-color: aqua;
+    transition: .3s all;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 100px;
+    height: 50px;
+}
+
+.buttonCadastrar:hover{
+    transition: .3s all;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+}
+
+.buttonCancelar{
+    position: relative;
+    top: 235px;
+    left: 400px;
+    border: 1px solid transparent;
+    background-color: aqua;
+    transition: .3s all;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 70px;
+    height: 25px;
+}
+
+.buttonCancelar:hover{
+    transition: .3s all;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+}

@@ -12,6 +12,7 @@ screen.appendChild(buttonforopen);
 
 //Fazendo o botão ter a função de abrir o modal com transicão
 buttonforopen.onclick = function () {
+
     //Criação e estilização do quadrado do modal
     let walkBox = document.createElement('div');
     walkBox.className = 'walkBox';
@@ -58,6 +59,22 @@ buttonforopen.onclick = function () {
     buttonCadastrar.className = 'buttonCadastrar';
     walkBox.appendChild(buttonCadastrar);
     buttonCadastrar.textContent = 'Cadastrar'
+
+    let buttonCancelar = document.createElement('button');
+    buttonCancelar.className = 'buttonCancelar';
+    walkBox.appendChild(buttonCancelar);
+    buttonCancelar.textContent = 'Cancelar'
+
+
+    buttonCancelar.onclick = function () {
+        walkBox.remove();
+        background.remove();
+
+        let buttonforopenDENOVO = document.createElement('button');
+        buttonforopenDENOVO.textContent = 'ABRIR';
+        buttonforopenDENOVO.className = 'buttonforopenDENOVO';
+        screen.appendChild(buttonforopenDENOVO);
+    }
 }
 
 
