@@ -1,0 +1,95 @@
+* {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.buttonforopen {
+    position: relative;
+    top: 30vh;
+    left: 640px;
+    width: 100px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(173, 216, 230);
+    cursor: pointer;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(-500px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+
+.walkBox {
+    position: absolute;
+    top: 100px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    background-color: #fff;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.walkBox {
+    display: none;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    border-radius: 30px;
+    left: 400px;
+}
+
+.walkBox {
+    display: block;
+}
+
+.nomecamp {
+    position: relative;
+    width: 600px;
+    height: min-content;
+    align-items: center;
+    top: 60px;
+}
+
+.inputNome {
+    width: 400px;
+    height: 30px;
+    border-radius: 30px;
+    border: solid 1px lightblue;
+    margin-left: 100px;
+    padding-left: 20px;
+}
+
+.inputSobrenome {
+    width: 400px;
+    height: 30px;
+    border-radius: 30px;
+    border: solid 1px lightblue;
+    margin-left: 100px;
+    padding-left: 20px;
+    margin-top: 40px;
+}
+
+.inputDatanasc {
+    width: 400px;
+    height: 30px;
+    border-radius: 30px;
+    border: solid 1px lightblue;
+    margin-left: 100px;
+    padding-left: 20px;
+    margin-top: 40px;
+}
+
+.titleInputs {
+    position: relative;
+    bottom: 170px;
+    left: 178px;
+}
