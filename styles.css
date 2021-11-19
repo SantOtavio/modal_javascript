@@ -98,7 +98,7 @@
     left: 250px;
     border: 1px solid transparent;
     background-color: aqua;
-    transition: .3s all;
+    transition: 0.3s all;
     cursor: pointer;
     border-radius: 30px;
     width: 100px;
@@ -106,7 +106,7 @@
 }
 
 .buttonCadastrar:hover {
-    transition: .3s all;
+    transition: 0.3s all;
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
 }
@@ -117,7 +117,7 @@
     left: 400px;
     border: 1px solid transparent;
     background-color: aqua;
-    transition: .3s all;
+    transition: 0.3s all;
     cursor: pointer;
     border-radius: 30px;
     width: 70px;
@@ -125,7 +125,7 @@
 }
 
 .buttonCancelar:hover {
-    transition: .3s all;
+    transition: 0.3s all;
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
 }

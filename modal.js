@@ -109,12 +109,15 @@ buttonforopen.onclick = function() {
 
                 data = document.querySelector(".inputDatanasc");
                 valorData = data.value;
+
+                let listaPessoa = [];
+
                 let pessoa = {
                     nome: valorNome,
                     sobrenome: valorSobrenome,
                     data: valorData,
                 };
-                listaPessoa = [pessoa];
+                listaPessoa.push = pessoa;
             };
         }
     };
