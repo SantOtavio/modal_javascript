@@ -6,7 +6,7 @@
 .buttonforopen {
     position: relative;
     top: 30vh;
-    left: 640px;
+    left: 658px;
     width: 100px;
     height: 60px;
     border-radius: 15px;
@@ -19,12 +19,10 @@
     from {
         transform: translateY(-500px);
     }
-
     to {
         transform: translateY(0px);
     }
 }
-
 
 .walkBox {
     position: absolute;
@@ -94,7 +92,7 @@
     left: 178px;
 }
 
-.buttonCadastrar{
+.buttonCadastrar {
     position: relative;
     top: 60px;
     left: 250px;
@@ -107,13 +105,13 @@
     height: 50px;
 }
 
-.buttonCadastrar:hover{
+.buttonCadastrar:hover {
     transition: .3s all;
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
 }
 
-.buttonCancelar{
+.buttonCancelar {
     position: relative;
     top: 235px;
     left: 400px;
@@ -126,8 +124,42 @@
     height: 25px;
 }
 
-.buttonCancelar:hover{
+.buttonCancelar:hover {
     transition: .3s all;
     border: 1px solid black;
     background-color: rgb(255, 255, 255);
+}
+
+.mensagemVermelha {
+    position: relative;
+    top: 20vh;
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+}
+
+.mensagemVerde {
+    position: relative;
+    top: 20vh;
+    width: 100%;
+    height: 70px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+}
+
+.listagemDados {
+    width: 800px;
+    height: 400px;
+    border: solid 1px black;
+    position: fixed;
+    left: 38vh;
+    top: 41vh;
+    z-index: -1;
 }
