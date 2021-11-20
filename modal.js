@@ -1,12 +1,31 @@
 let screen = document.querySelector("body");
 let footer = document.querySelector("footer");
-
+let listaPessoa = [];
 let buttonforopen = document.createElement("button");
 buttonforopen.textContent = "ABRIR";
 
 buttonforopen.className = "buttonforopen";
-
 screen.appendChild(buttonforopen);
+
+function criarTabela() {
+    let listagemDados = document.createElement("table");
+    listagemDados.className = "listagemDados";
+    screen.appendChild(listagemDados);
+    let tabelahead = document.createElement("thead");
+    tabelahead.className = "tabelahead";
+    listagemDados.appendChild(tabelahead);
+    tabelahead.innerText = "LISTAGEM DE CADASTROS";
+    let tabelabody = document.createElement("tbody");
+    tabelabody.className = "tabelabody";
+    listagemDados.appendChild(tabelabody);
+    tabelabody.innerText = listaPessoa;
+    let tabelafooter = document.createElement("tfoot");
+    tabelafooter.className = "tabelafooter";
+    listagemDados.appendChild(tabelafooter);
+    tabelafooter.innerText = "FINAL DA TABELA";
+    return;
+};
+console.log(criarTabela);
 
 buttonforopen.onclick = function() {
     let walkBox = document.createElement("div");
@@ -56,8 +75,12 @@ buttonforopen.onclick = function() {
     buttonCancelar.textContent = "Cancelar";
 
     buttonCancelar.onclick = function() {
-        walkBox.remove();
-        background.style.backgroundColor = "transparent";
+        walkBox.style.animationName = "slideout";
+        walkBox.style.animationDuration = "2s";
+        setTimeout(function() {
+            walkBox.remove();
+            background.style.backgroundColor = "transparent";
+        }, 2000);
     };
 
     buttonCadastrar.onclick = function() {
@@ -74,51 +97,62 @@ buttonforopen.onclick = function() {
             screen.appendChild(mensagemVermelha);
             mensagemVermelha.innerText =
                 "Preencha todos os campos ou clique em cancelar para sair!";
+            setTimeout(function() {
+                mensagemVermelha.remove();
+                walkBox.remove();
+                background.style.backgroundColor = "transparent";
+            }, 1000);
         } else if (!sobrenome || sobrenome == "") {
             let mensagemVermelha = document.createElement("div");
             mensagemVermelha.className = "mensagemVermelha";
             screen.appendChild(mensagemVermelha);
             mensagemVermelha.innerText =
                 "Preencha todos os campos ou clique em cancelar para sair!";
+            setTimeout(function() {
+                mensagemVermelha.remove();
+                walkBox.remove();
+                background.style.backgroundColor = "transparent";
+            }, 1000);
         } else if (!dataNasc || dataNasc == "") {
             let mensagemVermelha = document.createElement("div");
             mensagemVermelha.className = "mensagemVermelha";
             screen.appendChild(mensagemVermelha);
             mensagemVermelha.innerText =
                 "Preencha todos os campos ou clique em cancelar para sair!";
+            setTimeout(function() {
+                mensagemVermelha.remove();
+                walkBox.remove();
+                background.style.backgroundColor = "transparent";
+            }, 1000);
         } else {
-            let listagemDados = document.createElement("div");
-            listagemDados.className = "listagemDados";
-            screen.appendChild(listagemDados);
+            criarTabela();
             let mensagemVerde = document.createElement("div");
             mensagemVerde.className = "mensagemVerde";
             screen.appendChild(mensagemVerde);
             mensagemVerde.innerText = "Cadastro realizado!";
+            walkBox.remove();
+            background.style.backgroundColor = "transparent";
             setTimeout(function() {
                 mensagemVerde.remove();
-                walkBox.remove();
-                background.style.backgroundColor = "transparent";
             }, 3000);
 
-            cadastroPessoa = function() {
-                nome = document.querySelector(".inputNome");
-                valorNome = nome.value;
+            nome = document.querySelector(".inputNome");
+            valorNome = nome.value;
 
-                sobrenome = document.querySelector(".inputSobrenome");
-                valorSobrenome = sobrenome.value;
+            sobrenome = document.querySelector(".inputSobrenome");
+            valorSobrenome = sobrenome.value;
 
-                data = document.querySelector(".inputDatanasc");
-                valorData = data.value;
+            data = document.querySelector(".inputDatanasc");
+            valorData = data.value;
 
-                let listaPessoa = [];
-
-                let pessoa = {
-                    nome: valorNome,
-                    sobrenome: valorSobrenome,
-                    data: valorData,
-                };
-                listaPessoa.push = pessoa;
+            let pessoa = {
+                nome: valorNome,
+                sobrenome: valorSobrenome,
+                data: valorData,
             };
+            listaPessoa.push(pessoa);
+            console.log(pessoa);
+            listaPessoa.value;
         }
     };
 };
