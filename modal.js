@@ -18,13 +18,35 @@ function criarTabela() {
     let tabelabody = document.createElement("tbody");
     tabelabody.className = "tabelabody";
     listagemDados.appendChild(tabelabody);
-    tabelabody.innerText = listaPessoa;
+    let tabela = document.createElement("table");
+
+    let linhaTitulos = document.createElement("tr");
+
+    let titulo_1 = document.createElement("th");
+    linhaTitulos.appendChild(titulo_1);
+    let titulo_2 = document.createElement("th");
+    linhaTitulos.appendChild(titulo_2);
+    let titulo_3 = document.createElement("th");
+    linhaTitulos.appendChild(titulo_3);
+
+    tabela.appendChild(linhaTitulos);
+
+    titulo_1.innerText = "Nome";
+    titulo_2.innerText = "Sobrenome";
+    titulo_3.innerText = "Data de Nascimento";
+
+    listaInfo.forEach(function(e) {
+        linha = tabela.appendChild(
+            criarLinha(e.nome, e.sobreNome, e.dataNascimento)
+        );
+    });
+
     let tabelafooter = document.createElement("tfoot");
     tabelafooter.className = "tabelafooter";
     listagemDados.appendChild(tabelafooter);
     tabelafooter.innerText = "FINAL DA TABELA";
     return;
-};
+}
 console.log(criarTabela);
 
 buttonforopen.onclick = function() {
@@ -125,6 +147,15 @@ buttonforopen.onclick = function() {
                 background.style.backgroundColor = "transparent";
             }, 1000);
         } else {
+            nome = document.querySelector(".inputNome");
+            valorNome = nome.value;
+
+            sobrenome = document.querySelector(".inputSobrenome");
+            valorSobrenome = sobrenome.value;
+
+            data = document.querySelector(".inputDatanasc");
+            valorData = data.value;
+
             criarTabela();
             let mensagemVerde = document.createElement("div");
             mensagemVerde.className = "mensagemVerde";
@@ -136,23 +167,17 @@ buttonforopen.onclick = function() {
                 mensagemVerde.remove();
             }, 3000);
 
-            nome = document.querySelector(".inputNome");
-            valorNome = nome.value;
-
-            sobrenome = document.querySelector(".inputSobrenome");
-            valorSobrenome = sobrenome.value;
-
-            data = document.querySelector(".inputDatanasc");
-            valorData = data.value;
-
             let pessoa = {
                 nome: valorNome,
                 sobrenome: valorSobrenome,
                 data: valorData,
             };
             listaPessoa.push(pessoa);
-            console.log(pessoa);
             listaPessoa.value;
+
+            listaInfo.forEach(function(e) {
+                linha = tabela.appendChild(criarLinha(e.nome, e.sobreNome, e.dataNascimento));
+            });
         }
     };
 };
