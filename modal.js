@@ -18,7 +18,6 @@ function criarTabela() {
     let tabelabody = document.createElement("tbody");
     tabelabody.className = "tabelabody";
     listagemDados.appendChild(tabelabody);
-    let tabela = document.createElement("table");
 
     let linhaTitulos = document.createElement("tr");
 
@@ -29,17 +28,11 @@ function criarTabela() {
     let titulo_3 = document.createElement("th");
     linhaTitulos.appendChild(titulo_3);
 
-    tabela.appendChild(linhaTitulos);
+    tabelabody.appendChild(linhaTitulos);
 
     titulo_1.innerText = "Nome";
     titulo_2.innerText = "Sobrenome";
     titulo_3.innerText = "Data de Nascimento";
-
-    listaInfo.forEach(function(e) {
-        linha = tabela.appendChild(
-            criarLinha(e.nome, e.sobreNome, e.dataNascimento)
-        );
-    });
 
     let tabelafooter = document.createElement("tfoot");
     tabelafooter.className = "tabelafooter";
@@ -157,6 +150,7 @@ buttonforopen.onclick = function() {
             valorData = data.value;
 
             criarTabela();
+
             let mensagemVerde = document.createElement("div");
             mensagemVerde.className = "mensagemVerde";
             screen.appendChild(mensagemVerde);
@@ -172,11 +166,14 @@ buttonforopen.onclick = function() {
                 sobrenome: valorSobrenome,
                 data: valorData,
             };
-            listaPessoa.push(pessoa);
-            listaPessoa.value;
 
-            listaInfo.forEach(function(e) {
-                linha = tabela.appendChild(criarLinha(e.nome, e.sobreNome, e.dataNascimento));
+            listaPessoa.push(pessoa);
+
+            listaPessoa.forEach(function(e) {
+                linha = lista.appendChild(
+                    criarLinha(e.nome, e.sobreNome, e.dataNascimento)
+                );
+                e.nome, e.sobrenome, e.data;
             });
         }
     };
